@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "debug": "^4.3.4",
-    "serialport": "^11.0.0"
+    "serialport": "^11.0.0",
+    "serialport-js": "^1.1.0"
   }
 }
