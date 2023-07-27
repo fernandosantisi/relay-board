@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barcode Scanner Relay Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #scanner-status {
+      font-weight: bold;
+    }
+
+    #scanned-code {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #008000;
+    }
+
+    #relay-control {
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Barcode Scanner Relay Control</h1>
+  <p id="scanner-status">Scanner status: <span id="status">Connecting...</span></p>
+  <p id="scanned-code">Scanned Code: <span id="code">-</span></p>
+  <div id="relay-control">
+    <button id="activate-btn">Activate Relay</button>
+    <!-- Add more buttons for other relay control options if needed -->
+  </div>
+
+  <script>
+    // JavaScript code to handle the scanner status and scanned code display
+    const statusElement = document.getElementById('status');
+    const codeElement = document.getElementById('code');
+    const activateBtn = document.getElementById('activate-btn');
+
+    // Function to update the scanner status
+    function updateStatus(status) {
+      statusElement.textContent = status;
+    }
+
+    // Function to update the scanned code display
+    function updateScannedCode(code) {
+      codeElement.textContent = code;
+    }
+
+    // Event listener for the Activate Relay button
+    activateBtn.addEventListener('click', () => {
+      // You can add the logic here to send a command to activate the relay
+      // based on the scanned code or any other criteria.
+      // For now, this click event simply changes the button text.
+
+      if (activateBtn.textContent === 'Activate Relay') {
+        activateBtn.textContent = 'Relay Activated';
+      } else {
+        activateBtn.textContent = 'Activate Relay';
+      }
+    });
+
+    // Simulate scanned code for demonstration purposes
+    setTimeout(() => {
+      updateScannedCode('12346');
+      updateStatus('Scanner connected');
+    }, 2000);
+  </script>
+</body>
+</html>
